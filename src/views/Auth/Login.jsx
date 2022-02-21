@@ -43,10 +43,12 @@ export default function Login() {
           id="email"
           name="email"
           type="email"
+          aria-label="Email"
           onChange={handleFormChange}
         />
         <label>Password</label>
         <input
+          aria-label="Password"
           id="password"
           name="password"
           type="password"
