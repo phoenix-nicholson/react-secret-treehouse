@@ -21,7 +21,13 @@ export default function Login() {
 
     // TODO: If login was unsuccessful, set an error with a message
     // to display to the user that their login failed.
-    //
+    if (!loginWasSuccessful) {
+      setError('Login was not successful');
+    }
+    console.log('loginWasSuccessful', loginWasSuccessful);
+    if (loginWasSuccessful) {
+      history.replace('/');
+    }
     // If login was successful, use the history hook
     // from React Router to replace the current URL with the URL
     // we need to redirect to.
@@ -37,12 +43,14 @@ export default function Login() {
           id="email"
           name="email"
           type="email"
-        />{' '}
+          onChange={handleFormChange}
+        />
         <label>Password</label>
         <input
           id="password"
           name="password"
           type="password"
+          onChange={handleFormChange}
         />
         <button type="submit" aria-label="Sign In">
           Sign in
