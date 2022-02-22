@@ -26,7 +26,7 @@ export default function Login() {
     }
     console.log('loginWasSuccessful', loginWasSuccessful);
     if (loginWasSuccessful) {
-      history.replace('/');
+      history.replace(from.pathname);
     }
     // If login was successful, use the history hook
     // from React Router to replace the current URL with the URL
